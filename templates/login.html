@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+
+
+{% block content %}
+<h2>Dell Digital</h2>
+<br>
+<div class="row login no-padding">
+  <br>
+  <br>
+  <div class="col s6">
+      {% comment %} <h3>Login in</h3> {% endcomment %}     
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <a href="/password_reset">Forgot Password?</a>
+    <br>
+  </div>
+  <div class="col s6">
+    <img style="margin-left:50px" class="responsive-img loginImg"src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg"/> 
+  </div>
+  <br>          
+  </div>
+
+</div>
+
+{% endblock %}
