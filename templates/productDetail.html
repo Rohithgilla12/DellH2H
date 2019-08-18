@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
-{% block content %}
-    <img id="productImage" src="/media/{{object.imgUrl}}" style="height: 400px" data-zoom-image="/media/{{object.imgUrl}}" />
+{% block content %}    
+    {% comment %} <div class="col s4">
+        <img id="productImage" src="/media/{{object.imgUrl}}" style="height: 350px" data-zoom-image="/media/{{object.imgUrl}}" />
+    </div>        
+    <div class="sidecar" style="margin: 30px; padding: 30px;">
+        <div class="col s8">
+            <h2>{{object.title}}</h2>
+        </div>
+    </div> {% endcomment %}
 {% endblock %}

@@ -17,3 +17,6 @@ def productDetailView(request, *args, **kwargs):
         "object" : obj
     }
     return render(request, 'productDetail.html', context)
+
+def checkedOutConfirm(request, *args, **kwargs):
+    sku = kwargs['pk']
