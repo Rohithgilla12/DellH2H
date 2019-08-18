@@ -16,6 +16,7 @@ def productDetailView(request, *args, **kwargs):
     context = {
         "object" : obj
     }
+    
     return render(request, 'productDetail.html', context)
 
 def checkedOutConfirm(request, *args, **kwargs):
