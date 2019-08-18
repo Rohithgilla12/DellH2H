@@ -15,7 +15,6 @@ class Product(models.Model):
     specifications = models.TextField()
     imgUrl = models.ImageField(
         upload_to="Products/", null=True, verbose_name="")
-
     def __str__(self):
         return str(self.title)
 
@@ -29,7 +28,6 @@ class Review(models.Model):
 
     def __str__(self):
         return str(self.review)
-
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -40,7 +40,13 @@
         <div class="col s12">
             <div class="card" style="margin:10px;">
                 <div class="card-content">
-                    <span class="card-title" style="text-align: center">Reviews</span>                    
+                    <span class="card-title" style="text-align: center">Reviews</span>
+                    {% for review in revObject %}
+                        <p>{{review.review}}</p>
+                        <p><b>- </b>{{review.reviewer.first_name}} {{review.reviewer.last_name}} </b></p>
+                        <b>{{review.timestamp|timesince}} ago</b>
+                        
+                    {% endfor %}
                 </div>
             </div>
         </div>

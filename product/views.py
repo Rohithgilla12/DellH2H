@@ -13,10 +13,11 @@ def home(request, *args, **kwargs):
 def productDetailView(request, *args, **kwargs):
     pk = kwargs['pk']
     obj = Product.objects.get(sku = pk)
+    revObject = Review.objects.filter(product = pk)
     context = {
-        "object" : obj
-    }
-    
+        "object" : obj,
+        "revObject" : revObject
+    }    
     return render(request, 'productDetail.html', context)
 
 def checkedOutConfirm(request, *args, **kwargs):
