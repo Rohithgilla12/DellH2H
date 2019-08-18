@@ -2,10 +2,40 @@
 {% block content %}
 <div class="row">
     <div class="col s12" style="text-align: center">
-        <h2>Dell Hack to Hire</h2>
-    </div>
-    <div class="col s12">
-        {% comment %} <p>{{request.user}}</p> {% endcomment %}
-    </div>
+        <h2>Dell Digital</h2>
+    </div>    
+        {% for product in qset %}
+            <div class="col s12">
+                <div class="card darken-1" style="height: 250px">
+                    <div class="card-content">
+                        <a href="{% url 'productDetailView' pk=product.sku %}">
+                            <span class="card-title" style="text-align: center">
+                                {{product.title}}
+                            </span>
+                        </a>
+                        <div class="row">
+                            <div class="col s4">
+                                <img class="responsive-img" style="height: 180px" src = "/media/{{product.imgUrl}}">
+                            </div>
+                            <div class="col s8">
+                                <div class="priceDetails" style="padding: 20px; margin: 20px;">
+                                    {% if product.discountAvilable == True %}
+                                        <b>Price: </b> <span class="dis" style="color:grey"><strike> {{product.price}}</strike></span> <span class="newPrice" style="color: red">{{product.discountPrice}}</span>
+                                    {% else %}
+                                        <p>Nope</p>
+                                    {% endif %}
+                                </div>
+                                <div class="shoppify" style="padding:5px; margin: 20px; font-size: 8px ; word-wrap: break-word;">
+                                <div class="col s4"><a class="waves-effect waves-light btn" style="word-wrap: break-word; overflow: visible;"><i class="material-icons right">flash_on</i>Express Checkout</a></div>
+                                <div class="col s4"><a class="waves-effect waves-light btn"><i class="material-icons right">cached</i>Compare</a></div>
+                                <div class="col s4"><a class="waves-effect waves-light btn" style="font-size: 12px"><i class="material-icons right">add_shopping_cart</i>Add to Cart</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}    
+        {% comment %} <p>{{request.user}}</p> {% endcomment %}    
 </div>
 {% endblock %}
