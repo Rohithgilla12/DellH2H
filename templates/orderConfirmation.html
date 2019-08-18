@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}    
+    <div class="row">
+        <div class="col s12">
+            <h2 style = "text-align: center"><span style="color: green">Congratulations</span> your express order of {{product.title}} is placed.</h2>
+            <div class="card" style="height:400px;">
+                <div class="card-title">
+                    <h4 style="text-align: center">Order Summary</h4>
+                </div>
+                <div class="card-content">
+                    <div class="col s6">
+                        <img class="responsive-img" style="height: 250px" src = "/media/{{product.imgUrl}}">
+                        <p>Your order has been placed <span style="color:green">successfully</span> and shipping details will be communicated shortly.</p>           
+                    </div>
+                    <div class="col s6 Adresses">
+                        <div class="shippingAddress">
+                            <div class="card">
+                                <div class="card-title" style="text-align:center">Shipping Address</div>
+                                <div class="card-content">
+                                    <p>{{user.first_name}} {{user.last_name}}</p>
+                                    <p>{{user.profile.shippingAddress}}</p>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shippingAddress">
+                            <div class="card">
+                                <div class="card-title" style="text-align:center">Billing Address</div>
+                                <div class="card-content">
+                                    {{user.profile.shippingAddress}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paymentMethod">
+                            <b>Payment Method:</b> <i>{{user.profile.billingMethod}} (default)</i>
+                            <p style="color:#A4B0BD">You can change default payment method in your profile.</p>
+                        </div>
+                    </div>
+                </div>                 
+            </div>
+        <h4 style="text-align: center">Thanks for using Dell Digital</h4>
+        </div>
+    </div>
+{% endblock %}

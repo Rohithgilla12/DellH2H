@@ -20,3 +20,11 @@ def productDetailView(request, *args, **kwargs):
 
 def checkedOutConfirm(request, *args, **kwargs):
     sku = kwargs['pk']
+    prodcut = Product.objects.get(sku = sku)
+    userId = request.user.id
+    userObject = User.objects.get(id = userId)
+    context = {
+        "product" : prodcut,
+        "user"    : userObject
+    }    
+    return render(request, 'orderConfirmation.html', context)

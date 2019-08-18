@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'},name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'products/(?P<pk>\d{0,50})/$', productDetailView, name='productDetailView'),
+    url(r'expressCheckout/(?P<pk>\d{0,50})/$', checkedOutConfirm, name='expressCheckout'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
