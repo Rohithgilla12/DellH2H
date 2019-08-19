@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
+    <div class="col s12">
+        <h2 style="text-align:center">Ask Bikki</h2>
+    </div>
     <div class="col s6">
         <p>Todo</p>
     </div>
     <div class="col s6">
         <div class="row">
+        <div class="col s12">
+                <div class="card quadrat">
+                    <div class="card-content">
+                        <div class="card-title">
+                            {{prompt}}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col s6">
                 <div class="card" style="height:450px">
                     <div class="card-content">
@@ -44,15 +56,6 @@
                         </div>
                         <div class="revBox">
                             {{reviewObject2.review}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12">
-                <div class="card quadrat">
-                    <div class="card-content">
-                        <div class="card-title">
-                            {{prompt}}
                         </div>
                     </div>
                 </div>

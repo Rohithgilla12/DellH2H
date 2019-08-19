@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
+    <div class="col s12">
+        <h2 style="text-align:center">Checkout</h2>
+    </div>
     <div class="col s5">
         <div class="card" style="height: 540px">
             <div class="card-content">
@@ -13,8 +16,10 @@
                     <img class="responsive-img" style="height: 150px;" src = "/media/{{product2.imgUrl}}">
                     <p>{{product1.title}}</p>
                 </div>
-                <p>Price of group : ₹{{laptopGroupPrice}}
+                <div class="card-action">
+                    <p style="text-align:center">Price of group : ₹{{laptopGroupPrice}}
                 </p>
+                </div>
             </div>
         </div>
         <div class="card">
@@ -35,8 +40,10 @@
                     <img class="responsive-img" style="height: 150px;" src = "/media/{{product3.imgUrl}}">
                     <p>{{product3.title}}</p>
                 </div>
-                <p>Price of group : ₹{{desktopPrice}}
+                <div class="card-action">
+                    <p style="text-align:center">Price of group : ₹{{laptopGroupPrice}}
                 </p>
+                </div>
             </div>
         </div>
         <div class="card">
