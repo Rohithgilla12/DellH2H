@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col s6">
+        <p>Todo</p>
+    </div>
+    <div class="col s6">
+        <div class="row">
+            <div class="col s6">
+                <div class="card" style="height:450px">
+                    <div class="card-content">
+                        <span class="card-title">{{product1.title}}</span>
+                        <img class="responsive-img" style="height: 150px" src = "/media/{{product1.imgUrl}}">
+                        <div class="specifications">
+                            <p>{{product1.specifications}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">
+                            Review that best suits you!
+                        </div>
+                        <div class="revBox">
+                            {{reviewObject1.review}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-content" style="height:450px">
+                        <span class="card-title">{{product2.title}}</span>
+                        <img class="responsive-img" style="height: 150px" src = "/media/{{product2.imgUrl}}">
+                        <div class="specifications">
+                            <p>{{product2.specifications}}</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">
+                            Review that best suits you!
+                        </div>
+                        <div class="revBox">
+                            {{reviewObject2.review}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card quadrat">
+                    <div class="card-content">
+                        <div class="card-title">
+                            {{prompt}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
