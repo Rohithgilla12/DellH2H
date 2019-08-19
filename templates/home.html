@@ -3,8 +3,25 @@
 <div class="row">
     <div class="col s12" style="text-align: center">
         {% comment %} <h2>Dell Digital</h2> {% endcomment %}
-    </div>    
+    </div>
         {% for product in qset %}
+        <div id="modal1" class="modal">
+                <div class="modal-content">
+                <h4 style="text-align:center; color:red;">Alert ⚠️</h4>
+                <p>You are about to purchase your product with title "<b>{{product.title}}</b>"</p>
+                <p>We will be using default billing address, payment method for processing the order.</p>
+                <div class="shippingDetails" style="background-color: antiquewhite;">
+                    <p>Shipping Address:</p>
+                    <p>{{user.first_name}} {{user.last_name}}</p>
+                    <p>{{user.profile.shippingAddress}}</p>
+                    <p>{{user.profile.billingMethod}}</p>
+                </div>                
+                </div>
+                <div class="modal-footer">
+                <a href="{% url 'expressCheckout' pk=product.sku %}" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Disagree</a>
+                </div>
+            </div>
             <div class="col s12">
                 <div class="card darken-1" style="height: 250px">
                     <div class="card-content">
@@ -20,14 +37,14 @@
                             <div class="col s8">
                                 <div class="priceDetails" style="padding: 20px; margin: 20px;">
                                     {% if product.discountAvilable == True %}
-                                        <b>Price: </b> <span class="dis" style="color:grey"><strike> {{product.price}}</strike></span> <span class="newPrice" style="color: red">{{product.discountPrice}}</span>
+                                        <b>Price: ₹</b> <span class="dis" style="color:grey"><strike> {{product.price}}</strike></span> <span class="newPrice" style="color: red">{{product.discountPrice}}</span>
                                     {% else %}
-                                        <b>Price: </b> <span>{{product.price}}</span>
+                                        <b>Price: ₹</b> <span>{{product.price}}</span>
                                     {% endif %}
                                 </div>
                                 <div class="shoppify" style="padding:5px; margin: 20px; font-size: 8px ; word-wrap: break-word;">
-                                    <div class="col s4"><a class="waves-effect waves-light btn" style="word-wrap: break-word; overflow: visible;width:100%; background-color:red" href="{% url 'expressCheckout' pk=product.sku %}"><i class="material-icons right">flash_on</i>Express Checkout</a></div>
-                                    <div class="col s4"><a class="waves-effect waves-light btn tooltipped" style="width:100%; background-color:#129cf3" data-position="top" data-tooltip="Ask our chatbot for more details"><i class="material-icons right">chat</i>Ask Bikki</a></div>
+                                    <div class="col s4"><a class="waves-effect waves-light btn modal-trigger" style="word-wrap: break-word; overflow: visible;width:100%; background-color:red" href="#modal1"><i class="material-icons right">flash_on</i>Express Checkout</a></div>
+                                    <div class="col s4"><a class="waves-effect waves-light btn tooltipped" style="width:100%; background-color:#129cf3" href="/askBikki/1/2"><i class="material-icons right">chat</i>Ask Bikki</a></div>
                                     <div class="col s4"><a class="waves-effect waves-light btn" style="font-size: 12px; width:100%; background-color:#F4C724"><i class="material-icons right">add_shopping_cart</i>Add to Cart</a></div>
                                 </div>
                             </div>
