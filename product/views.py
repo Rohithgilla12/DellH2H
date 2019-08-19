@@ -71,3 +71,6 @@ def checkOut(request, *args, **kwargs):
 
 def compareProducts(request, *args, **kwargs):
     return render(request, "compareProducts.html", {})
+
+def finishCheckout(request, *args, **kwargs):
+    return render(request,"finishCheckout.html",{})
