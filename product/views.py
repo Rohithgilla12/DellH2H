@@ -55,10 +55,16 @@ def checkOut(request, *args, **kwargs):
     product2 =  Product.objects.get(sku = 2)
     product3 =  Product.objects.get(sku = 3)
     product4 =  Product.objects.get(sku = 4)
+    laptopGroup = float(product1.price) + float(product2.price)
+    desktopGroup = float(product3.price)
+    togetherGroup = float(product3.price) + float(product4.price)
     context = {
         "product1": product1,
         "product2": product2,
         "product3": product3,
-        "product4": product4
+        "product4": product4,
+        "laptopGroupPrice": laptopGroup,
+        "desktopPrice": desktopGroup,
+        "togetherPrice": togetherGroup
     }
     return render(request, "checkout.html",context)
