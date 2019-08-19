@@ -34,7 +34,8 @@ urlpatterns = [
     url(r'askBikki/(?P<pk1>\d{0,50})/(?P<pk2>\d{0,50})', askBikki, name= 'askBikkiCompare'),
     url(r'checkout/$', checkOut, name= "checkoutPage"),
     url(r'checkout/compare/$', compareProducts, name= "checkoutPage"),
-    url(r'checkout/complete/$', finishCheckout, name= "checkoutComplete")
+    url(r'checkout/complete/$', finishCheckout, name= "checkoutComplete"),
+    url(r'checkout/shareChat/$', shareChatComponent, name = 'shareChat')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

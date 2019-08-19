@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col s12">
+        <h2 style="text-align:center">Personal Chatroom</h2>
+    </div>
+    <div class="col s6">
+        <div class="card" style="overflow-y: scroll; height:850px;">
+            <div class="card-content">
+                <span class="card-title">Chat with <span class="cname" style="color:red">Friends</span></span>                
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText">
+                            <b>Me:</b>
+                            Hey this is {{request.user.first_name}} {{request.user.last_name}}, I invite you to my chat room to help me choose a laptop for me.
+                            </p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText">
+                            <b>Me:</b>
+                                <img src="/media/Products/41D1SYZ2sPL_pWuRmOB.jpg" style="width: 180px" class="leftText img img-responsive" alt="">
+                            </p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText">
+                            <b>Me:</b>
+                                <img src="/media/Products/61AnHklbycL._SL1000_.jpg" style="width: 180px"  class="leftText img img-responsive" alt="">
+                            </p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+                    <div class="row">
+                        <div class="col s6"></div>
+                        <div class="col s6">
+                        <p class="rightText"><b>Abhinav: </b>Hey Rohith I think Gaming laptop will suit you more!</p>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText"><b>Me: </b>Thanks for advice Abhinav! 🤗</p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+                    <div class="row">
+                        <div class="col s6"></div>
+                        <div class="col s6">
+                        <p class="rightText"><b>Srija: </b>Yeah Gilla, even Gaming laptop has good graphics card.</p>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText"><b>Me: </b> Yeah true thaat!!</p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+                    <div class="row">
+                        <div class="col s6"></div>
+                        <div class="col s6">
+                        <p class="rightText"><b>Aadi: </b>Yeah dude, you can install CUDA and work on Neural Networks!</p>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText"><b>Me: </b>Then I am going with the gaming laptop!!</p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+                    <div class="row">
+                        <div class="col s6"></div>
+                        <div class="col s6">
+                        <p class="rightText"><b>Abhinav: </b>Yeah Gilla, do checkout their express checkout I got some amazing reviews about that service from Dell Digital</p>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <p class="leftText"><b>Me: </b> Sure will definetely check that out!</p>
+                        </div>
+                        <div class="col s6"></div>                    
+                    </div>                
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="row">        
+            <div class="col s12">
+                <div class="card" style="height:320px">
+                    <div class="card-content">
+                        <span class="card-title">{{product1.title}}</span>
+                        <img class="responsive-img" style="height: 150px" src = "/media/{{product1.imgUrl}}">
+                        <div class="specifications">
+                            <p>{{product1.specifications}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content" style="height:320px">
+                        <span class="card-title">{{product2.title}}</span>
+                        <img class="responsive-img" style="height: 150px" src = "/media/{{product2.imgUrl}}">
+                        <div class="specifications">
+                            <p>{{product2.specifications}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card quadrat">
+                    <div class="card-content">
+                        <div class="card-title">
+                            {{prompt}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
