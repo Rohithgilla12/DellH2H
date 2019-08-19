@@ -68,3 +68,6 @@ def checkOut(request, *args, **kwargs):
         "togetherPrice": togetherGroup
     }
     return render(request, "checkout.html",context)
+
+def compareProducts(request, *args, **kwargs):
+    return render(request, "compareProducts.html", {})
