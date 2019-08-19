@@ -3,6 +3,7 @@ from .models import *
 import random
 
 # Create your views here.
+checkoutItemSkus = [1,3]
 
 def home(request, *args, **kwargs):
     qset = Product.objects.values()
@@ -32,7 +33,7 @@ def checkedOutConfirm(request, *args, **kwargs):
     }    
     return render(request, 'orderConfirmation.html', context)
 
-def askBikki(request, *arggs, **kwargs):  
+def askBikki(request, *args, **kwargs):  
     prompts = ["Dell 9570 has Geforce Graphics, 9370 has Intel Graphics 🚀", "Dell 9370 has 13 inch screen, is compatible and portable 💼"]
     productId1 =kwargs['pk1']
     productId2 =kwargs['pk2']
@@ -47,5 +48,17 @@ def askBikki(request, *arggs, **kwargs):
         "reviewObject2": revObject2[0],
         "prompt"    : prompts[random.randint(0,1)]
     }
-    print(revObject2)
     return render(request, 'askBikki.html', context)
+
+def checkOut(request, *args, **kwargs):
+    product1 =  Product.objects.get(sku = 1)
+    product2 =  Product.objects.get(sku = 2)
+    product3 =  Product.objects.get(sku = 3)
+    product4 =  Product.objects.get(sku = 4)
+    context = {
+        "product1": product1,
+        "product2": product2,
+        "product3": product3,
+        "product4": product4
+    }
+    return render(request, "checkout.html",context)

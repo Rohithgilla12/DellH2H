@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col s5">
+        <div class="card" style="height: 540px">
+            <div class="card-content">
+                <div class="card-title">Laptop(s)</div>
+                <div class="imgContainer" style="text-align:center">
+                    <img class="responsive-img" style="height: 150px;" src = "/media/{{product1.imgUrl}}">
+                    <p>{{product1.title}}</p>
+                </div>
+                <div class="imgContainer" style="text-align:center">
+                    <img class="responsive-img" style="height: 150px;" src = "/media/{{product2.imgUrl}}">
+                    <p>{{product1.title}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                    <div class="row" style="margin-bottom: -10px;text-align:center;">
+                    <div class="col s4"><a href="#"><i class="medium material-icons">share</i></a></div>
+                    <div class="col s4"><a href="#"><i class="medium material-icons">compare_arrows</i></a></div>
+                    <div class="col s4"><a href="#"><i class="medium material-icons">chat</i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s5">
+        <div class="card" style="height: 540px">
+            <div class="card-content">
+                <div class="card-title">CPU(s)</div>
+                <div class="imgContainer" style="text-align:center">
+                    <img class="responsive-img" style="height: 150px;" src = "/media/{{product3.imgUrl}}">
+                    <p>{{product3.title}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                    <div class="row" style="margin-bottom: -10px;text-align:center;">
+                    <div class="col s4"><a href="#"><i class="medium material-icons">share</i></a></div>
+                    <div class="col s4"><a href="#"><i class="medium material-icons">compare_arrows</i></a></div>
+                    <div class="col s4"><a href="#"><i class="medium material-icons">chat</i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s2">
+        <div class="card" style="height: 540px">
+            <div class="card-content">
+                <div class="card-title">Together</div>
+                <div class="imgContainer" style="text-align:center">
+                    <img class="responsive-img" style="height: 100px;" src = "/media/{{product3.imgUrl}}">
+                    <p>{{product3.title}}</p>
+                </div>
+                <div class="imgContainer" style="text-align:center">
+                    <img class="responsive-img" style="height: 100px;" src = "/media/{{product4.imgUrl}}">
+                    <p>{{product4.title}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                    <div class="row" style="margin-bottom: -10px;text-align:center;">
+                    <div class="col s4"><a href="#"><i class="small material-icons">share</i></a></div>
+                    <div class="col s4"><a href="#"><i class="small material-icons">compare_arrows</i></a></div>
+                    <div class="col s4"><a href="#"><i class="small material-icons">chat</i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
